@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações Interativas - Rede PAN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between font-sans">
+
+    <header class="bg-slate-800 border-b border-slate-700 p-4 text-center shadow-lg">
+        <h1 class="text-2xl md:text-3xl font-extrabold text-blue-400 flex items-center justify-center gap-2">
+            <i data-lucide="network"></i> Simulador & Animação: Rede PAN
+        </h1>
+        <p class="text-slate-400 text-sm md:text-base mt-1">Navegue pelas 10 animações didáticas para o seu trabalho académico</p>
+    </header>
+
+    <main class="flex-grow max-w-6xl w-full mx-auto p-4 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        
+        <div class="lg:col-span-4 bg-slate-800/80 p-4 rounded-2xl border border-slate-700/60 shadow-xl flex flex-col gap-2 max-h-[75vh] lg:max-h-[650px] overflow-y-auto">
+            <h2 class="text-lg font-bold text-slate-200 mb-2 pb-2 border-b border-slate-700 flex items-center gap-2">
+                <i data-lucide="play-circle" class="text-blue-400"></i> Escolha a Animação
+            </h2>
+            <div id="animation-menu" class="flex flex-col gap-1.5">
+                </div>
+        </div>
+
+        <div class="lg:col-span-8 bg-slate-950 rounded-2xl border-2 border-blue-500/30 p-6 flex flex-col justify-between min-h-[450px] lg:min-h-[550px] relative overflow-hidden shadow-2xl shadow-blue-500/5">
+            
+            <div class="z-10 flex justify-between items-start border-b border-slate-800 pb-3">
+                <div>
+                    <span id="topic-number" class="text-xs font-bold uppercase tracking-widest text-blue-500 bg-blue-500/10 px-2.5 py-1 rounded-full">Animação 1</span>
+                    <h3 id="topic-title" class="text-xl md:text-2xl font-bold text-white mt-1">Carregando...</h3>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-2 rounded-xl flex gap-2">
+                    <button id="btn-replay" class="hover:bg-slate-800 p-1.5 rounded transition text-blue-400" title="Reiniciar Animação">
+                        <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="animation-stage" class="flex-grow flex items-center justify-center relative my-4 min-h-[250px]">
+                </div>
+
+            <div class="z-10 bg-slate-900/90 border border-slate-800 p-4 rounded-xl">
+                <h4 class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-1 flex items-center gap-1">
+                    <i data-lucide="info" class="w-3.5 h-3.5"></i> O que explicar nesta cena:
+                </h4>
+                <p id="topic-description" class="text-sm text-slate-300 leading-relaxed">
+                    Carregando a descrição explicativa...
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-800/50 border-t border-slate-800 p-4 mt-4">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="text-xs text-slate-500">
+                Trabalho sobre Redes de Área Pessoal (PAN) • Criado de forma dinâmica.
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="btn-prev" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl border border-slate-700 flex items-center gap-2 text-sm transition">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i> Anterior
+                </button>
+                <button id="btn-next" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl flex items-center gap-2 text-sm transition font-semibold">
+                    Seguinte <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
